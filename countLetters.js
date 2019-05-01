@@ -1,11 +1,13 @@
 function countLetters(word) {
   var count = {};
-  for(let i = 0; i< word.length ; i++) {
-    if(Object.key(count).lastIndexOf(word[i]) === -1) {
-      count[word[i]] = 1;
+  var noSpacesWord = word.split(" ").join("");
+  //console.log(noSpacesWord);
+  for(let i = 0; i< noSpacesWord.length ; i++) {
+    if(Object.keys(count).lastIndexOf(noSpacesWord[i]) === -1) {
+      count[noSpacesWord[i]] = 1;
     }
     else {
-      count[word[i]] ++;
+      count[noSpacesWord[i]] ++;
     }
   }
   return count;
